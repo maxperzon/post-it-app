@@ -1,0 +1,11 @@
+<section id="show_post">
+	<div class="wrapper-small">
+		<h1><%= @quote.title %></h1>
+		<div class="content">
+			<p id="content_date">About <%= time_ago_in_words(@quote.created_at) %></p>
+			<p><%= @quote.content %></p>
+		</div>
+		<a href="edit_post.html">Edit</a>
+		<a href="#">Delete</a>
+	</div>
+</section>
