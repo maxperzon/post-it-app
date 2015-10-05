@@ -1,13 +1,17 @@
 <section id="quote">
 	<div class="wrapper">
-		<h1>quotes</h1>
-		<% @quotes.each do |quote|%>
-		<div class="quote">
-			<%= link_to(quote) do %>
-				<h2><%= quote.title %></h2>
-				<p>About <%= time_ago_in_words(quote.created_at) %></p>
+		<% unless @quotes.blank? %>
+			<h1>quotes</h1>
+			<% @quotes.each do |quote|%>
+			<div class="quote">
+				<%= link_to(quote) do %>
+					<h2><%= quote.title %></h2>
+					<p>About <%= time_ago_in_words(quote.created_at) %></p>
+				<% end %>
+			</div>
 			<% end %>
-		</div>
+		<% else %>
+			<h1>Add your First Quote</h1>
 		<% end %>
 	</div>
 </section>

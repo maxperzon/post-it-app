@@ -11,13 +11,17 @@
 <header>
 	<div class="wrapper">
 
-		<%= link_to("/quotes") do %>
+		<%= link_to("/") do %>
 			<%= image_tag("logo.png") %>
 			<h2>THE BOOK QUOTER</h2>
 		<% end %>
 		<ul id="menu">
-			<li><%= link_to "New Quote", new_quote_path %></li>
-			<li><a href="#">Log Out</a></li>
+			<% if user_signed_in? %>
+				<li><%= link_to "New Quote", new_quote_path %></li>
+				<li><%= link_to "Log Out", destroy_user_session_path, method: :delete%></li>
+			<% else %>
+				<li><%= link_to "Log In", new_user_session_path %></li>
+			<% end %>
 		</ul>
 
 	</div>
@@ -31,14 +35,14 @@
 		<div class="wrapper">
 			<ul id="about">
 				<li class="foot-header">about</li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">Blog</a></li>
+				<li><a href="http://maxperzon.se/" target="_blank">Portfolio</a></li>
+				<li><a href="https://maxperzonblog.herokuapp.com/" target="_blank">Blog</a></li>
 			</ul>
 			<ul id="contact">
 				<li class="foot-header">contact</li>
-				<li><a href="#">Facebook</a></li>
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Github</a></li>
+				<li><a href="http://se.linkedin.com/pub/max-perzon/b4/707/441" target="_blank">Linked In</a></li>
+				<li><a href="https://github.com/maxperzon" target="_blank">Twitter</a></li>
+				<li><a href="https://twitter.com/maxperzon" target="_blank">Github</a></li>
 			</ul>
 			<p id="copy-r">© 2015 Max Perzon</p>
 		</div>

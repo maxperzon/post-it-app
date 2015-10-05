@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
 	before_action :find_quote, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!
 	
 	def index
 		@quotes = Quote.where(user_id: current_user)
