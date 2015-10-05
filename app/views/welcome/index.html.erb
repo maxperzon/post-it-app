@@ -1,2 +1,25 @@
-<h1>This is the welcome page</h1>
+<section id="home">
+	<div id="banner"></div>
+	<div class="wrapper">
+		<h1>remember <br> the quote</h1>
+		<p>Save the page and your favotire quote in <br> your favorite books. <br>
+Sign up and start sorting the mess!</p>
+	</div>
+</section>
+
+<section id="home-reference">
+	<div class="wrapper-small">
+		<%= image_tag("people.svg") %>
+		<h2>“It has never been easier. Period.”</h2>
+		<p>-Max Perzon</p>
+	</div>
+</section>
+
+
+<section id="home-join">
+	<div class="wrapper-small">
+			<h2>let's <br>begin!</h2>
+			<%= link_to "Sign Up", new_user_registration_path%>
+		</div>
+</section>
 

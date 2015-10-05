@@ -52,6 +52,20 @@
 			}
 		}
 	}
+	/*
+	ERRORS
+	*/
+	.error_notification {
+		width: 250px;
+		margin: 0 auto;
+		text-align: center;
+		color: $red;
+		font-size: 15px;
+		font-weight: 700;
+	}
+	.error {
+		color: $red;
+	}
 
 	/* 
 	HOME
@@ -61,7 +75,7 @@
 		float: left;
 		#banner {
 			height: 100%;
-			background: url(../img/banner.jpg) no-repeat center center;
+			background: image-url("banner.jpg") no-repeat center center;
 			background-size: cover;
 		}
 		h1 {

@@ -2,18 +2,18 @@ class QuotesController < ApplicationController
 	before_action :find_quote, only: [:show, :edit, :update, :destroy]
 	
 	def index
-		@quotes = Quote.all.order("created_at DESC")
+		@quotes = Quote.where(user_id: current_user)
 	end
 
 	def show
 	end
 
 	def new
-		@quote = Quote.new
+		@quote = current_user.quotes.build
 	end
 
 	def create
-		@quote = Quote.new(quote_params)
+		@quote = current_user.quotes.build(quote_params)
 
 		if @quote.save
 			redirect_to @quote
