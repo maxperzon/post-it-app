@@ -26,9 +26,16 @@ class QuotesController < ApplicationController
 	end
 
 	def update
+		if @quote.update(quote_params)
+			redirect_to @quote
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@quote.destroy
+		redirect_to quotes_path
 	end
 
 	private

@@ -1,0 +1,15 @@
+<%= form_for @quote do |f| %>
+	<% if @quote.errors.any? %>
+		<div id="errors">
+			<h2><%= pluralize(@quote.errors.count, "error") %> preveneted this quote from saving</h2>
+			<ul>
+				<% @quote.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+		<%= f.text_field :title, :placeholder => "Title"%> <br>
+		<%= f.text_area :content, :placeholder => "Content"%> <br>
+		<%= f.submit 'Create', :class => 'button' %>
+<% end %>

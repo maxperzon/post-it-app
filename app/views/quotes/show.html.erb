@@ -5,7 +5,7 @@
 			<p id="content_date">About <%= time_ago_in_words(@quote.created_at) %></p>
 			<p><%= @quote.content %></p>
 		</div>
-		<a href="edit_post.html">Edit</a>
-		<a href="#">Delete</a>
+		<%= link_to "Edit", edit_quote_path(@quote) %>
+		<%= link_to "Delete", quote_path(@quote), method: :delete, data: {confirm: "Are you sure?"} %>
 	</div>
 </section>

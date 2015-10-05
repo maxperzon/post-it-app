@@ -11,17 +11,20 @@
 <header>
 	<div class="wrapper">
 
-		<a href="index.html">
+		<%= link_to("/quotes") do %>
 			<%= image_tag("logo.png") %>
 			<h2>THE BOOK QUOTER</h2>
-		</a>
+		<% end %>
 		<ul id="menu">
-			<li><a href="new_post.html">New Post</a></li>
+			<li><%= link_to "New Quote", new_quote_path %></li>
 			<li><a href="#">Log Out</a></li>
 		</ul>
 
 	</div>
 </header>
+
+<p class="notice" style="text-align: center;"><%= notice %></p>
+<p class="alert" style="text-align: center;"><%= alert %></p>
 
 <%= yield %>
 	
